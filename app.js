@@ -26,29 +26,26 @@
 //     console.log('v is not undefined');
 // }
 
-const radius = [2, 5, 8, 4, 3];
-
-// const area = function (radius) {
-//   return ;
-// };
-
-const Calculate = function (radius) {
-  const output = [];
-for (let i = 0; i < radius.length; i++) {
-    output.push(Math.PI * radius[i] * radius[i]);
+const raduis=[3,4,7,8,6]
+const area=function(raduis){
+  return Math.PI*raduis*raduis
+}
+const curcufrence=function(raduis){
+  return 2*Math.PI*raduis
+}
+const Diameter=function(raduis){
+  return 2*raduis
+}
+const Calulate=function(raduis,logic){
+  const output=[]
+  for(let i=0;i<raduis.length;i++){
+    output.push(logic(raduis[i]))
   }
   return output;
-};
-console.log(Calculate(radius));
+}
+console.log(Calulate(raduis,area))
+console.log(Calulate(raduis,curcufrence))
+console.log(Calulate(raduis,Diameter))
 
-
-// let radius = [3, 4, 8, 5];
-
-// function CalculateAre(radius) {
-//   const output = [];
-//   for (let i = 0; i < radius.length; i++) {
-//     output.push(Math.PI * radius[i] * radius[i]);
-//   }
-//   return output;
-// }
-// console.log(CalculateAre(radius));
+const res=raduis.map(area)
+console.log(res)
